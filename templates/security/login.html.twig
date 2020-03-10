@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!
+{% endblock %}
+
+{% block body %}
+	{% if error %}
+		<div class="alert alert-danger my-3 text-center">Mail et/ou Mot de passe incorect(s)</div>
+	{% endif %}
+	<div class="row my-5">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4">
+			<h1 class="h3 my-5 font-weight-normal text-center">Bienvenue....</h1>
+		</div>
+	</div>
+	<div class="row mx-1 my-2">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4 loginf shadow rounded">
+			<form method="post">
+				{% if app.user %}
+					<div class="mb-3">
+						You are logged in as
+						{{ app.user.username }},
+						<a href="{{ path('app_logout') }}">Logout</a>
+					</div>
+				{% endif %}
+				<div class="form-group mt-2">
+					<label for="inputEmail">Adresse mail</label>
+					<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
+				</div>
+				<div class="form-group">
+					<label for="inputPassword">Mot de passe</label>
+					<input type="password" name="password" id="inputPassword" class="form-control" required>
+				</div>
+
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+				<div class="form-check mb-2">
+					<input type="checkbox" class="form-check-input" name="_remember_me">
+					<label class="form-check-label" for="checkbox">Se souvenir de moi</label>
+				</div>
+				<div class="row my-2">
+					<div class="col-sm-6">
+					<button class="btn btn-raised btn-secondary mr-5" style="width: 158px;" type="submit">
+						Se connecter
+					</button></div>
+					<div class="col-sm-6 mt-2 mt-xs-4 text-center">
+					<a href="#" class="ml-lg-5  text-dark">Mot de passe oublié?</a></div></div>
+				</form>
+			</div>
+			<div class="row mt-4">
+				<div class="col-sm-4"></div>
+				<div class="col-sm-4 text-center">
+					<h3 class="my-3">code.amorce.org
+					</h3>
+					<p>Vous trouverez sur ce site l'intégralité du contenu attenant à votre formation. Tout y est pour vous apprendre au mieux votre métier de demain.
+							Les formateurs se trouvent bien sûr à votre disposition tout au long de cette aventure.
+							 N'oubliez pas de compléter votre profil pour nous permettre un réel suivi de votre parcours.
+					</p>
+				</div>
+			</div>
+		
+	{% endblock %}

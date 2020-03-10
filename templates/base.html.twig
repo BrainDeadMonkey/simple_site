@@ -1,12 +1,127 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+	</head>
+	<body>
+		<div class="container-fluid">
+			{# <nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<a class="navbar-brand" href="#">Navbar</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Mon Livret
+								<span class="sr-only"></span>
+							</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Parcours
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Mon profil</a>
+						</li>
+					</ul>
+				</div>
+			</nav> #}
+			{% block body %}{% endblock %}
+			{# <footer class="pt-4 mt-auto pt-md-5 border-top">
+				<div class="row">
+					<div class="col-12 col-md">
+						<img class="mb-2" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">
+						<small class="d-block mb-3 text-muted">© 2019-2020</small>
+					</div>
+					<div class="col-6 col-md">
+						<h5>Features</h5>
+						<ul class="list-unstyled text-small">
+							<li>
+								<a class="text-muted" href="#">Cool stuff</a>
+							</li>
+							<li>
+								<a class="text-muted" href="#">Random feature</a>
+							</li>
+							<li>
+								<a class="text-muted" href="#">Team feature</a>
+							</li>
+							<li>
+								<a class="text-muted" href="#">Stuff for developers</a>
+							</li>
+							<li>
+								<a class="text-muted" href="#">Another one</a>
+							</li>
+							<li>
+								<a class="text-muted" href="#">Last time</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-6 col-md">
+						<h5>Find us</h5>
+						<ul class="list-unstyled text-small">
+							<li class="">
+								<a class="text-muted" href="">
+									<i class="fas fa-phone-alt">
+										+33781789047</i>
+								</a>
+							</li>
+							<li class="mt-2 text-muted">
+								<i class="fas fa-location-arrow">
+									Grüner 14, 61169 Hessen, Geramy</i>
+							</li>
+							<li class="mt-2 text-muted">
+								<i class="fas fa-envelope">
+									contact@orditop.fr</i>
+							</li>
+						</ul>
+					</div>
+					<div class="col-6 col-md">
+						<h5>Resources</h5>
+						<ul class="list-unstyled text-small ml-4">
+							<li>
+								<a class="text-dark" href="">
+									<i class="fab fa-facebook mr-1">
+										GitHub</i>
+								</a>
+							</li>
+							<li class="mt-2">
+								<a class="text-info" href="">
+									<i class="fab fa-twitter">
+										Twitter</i>
+								</a>
+							</li>
+							<li class="mt-2">
+								<a style="color:#3b5998;" href="">
+									<i class="fab fa-github">
+										Facebook</i>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</footer> #}
+</div>
+			{% block javascripts %}
+			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+			<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+				{{ encore_entry_script_tags('app') }}
+			{% endblock %}
+		</body>
+	</body>
 </html>
